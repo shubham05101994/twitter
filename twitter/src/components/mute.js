@@ -42,7 +42,7 @@ class Mute extends Component {
         
         return ( 
 
-            <div> 
+            <div className= "twitter"> 
                  id:<code>{JSON.stringify(data.id)}</code><br />
                     blocked_by:<code>{JSON.stringify(data.blocked_by)}</code> <br />
                     blocking:<code>{JSON.stringify(data.blocking)}</code> <br />

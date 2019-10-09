@@ -84,7 +84,7 @@ class FriendsList extends Component {
         
         return ( 
 
-            <div> 
+            <div className= "twitter"> 
               <div>
                 created_at:<code>{JSON.stringify(data0.created_at)}</code><br />
                 description:<code>{JSON.stringify(data0.description)}</code><br />

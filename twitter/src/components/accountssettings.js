@@ -34,7 +34,7 @@ class AccountsSettings extends Component {
           console.log(data);
         }
         return ( 
-            <div>
+            <div className= "twitter">
                  <code>{JSON.stringify(data)}</code>
             </div>
          );

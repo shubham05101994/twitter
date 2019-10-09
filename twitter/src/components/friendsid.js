@@ -58,7 +58,7 @@ class FriendsID extends Component {
         
         return ( 
 
-            <div> 
+            <div className= "twitter"> 
             <div>id0:<code>{JSON.stringify(data0)}</code></div>
             <div>id1:<code>{JSON.stringify(data1)}</code></div>
             <div>id2:<code>{JSON.stringify(data2)}</code></div>

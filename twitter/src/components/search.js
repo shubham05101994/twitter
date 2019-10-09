@@ -42,7 +42,7 @@ class Search extends Component {
         
         return ( 
 
-            <div> 
+            <div className= "twitter"> 
                  <code>{JSON.stringify(data)}</code>
             </div>
          );

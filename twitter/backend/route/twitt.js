@@ -38,10 +38,13 @@ router.route("/usertimeline").get((req, res) => {
 });
 
 
-//4 mentions_timeline
-//T.get('statuses/mentions_timeline',  function (err, data, response) {
-//  console.log(data)
-//})
+//4 savedsearchlist
+router.route("/savedsearchlist").get((req, res) => {
+  
+  T.get('saved_searches/list' )
+  .then(results => res.json(results))
+  .catch(err => res.status(400).json("Error: " + err));
+});
 
 
 //5 friends/ids

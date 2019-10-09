@@ -1,7 +1,8 @@
 import React, { Component } from "react";
 import Axios from "axios";
 
-class HomeTimeline extends Component {
+
+class Savedsearch extends Component {
     constructor() {
         super();
         this.state = {  
@@ -13,7 +14,7 @@ class HomeTimeline extends Component {
 
 
   componentDidMount() {
-    Axios.get("http://localhost:5000/twitt/hometimeline/").then(response => {
+    Axios.get("http://localhost:5000/twitt/savedsearchlist/").then(response => {
       console.log(response);
       console.log('hi');
       if (response) {
@@ -49,4 +50,4 @@ class HomeTimeline extends Component {
     }
 }
  
-export default HomeTimeline;
+export default Savedsearch;
