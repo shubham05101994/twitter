@@ -11,23 +11,27 @@ class Eightbuttons extends Component {
         return (  
 
             
-          <div>
+          <div className = "App">
             <p>Below are the Twitter APIs used</p>
             
-          <button className="btn btn-primary"><Link to="/search" >Search Tweets with the word 'rainbow'</Link></button> 
-          <button className="btn btn-primary"><Link to="/hometimeline">Home_Timeline</Link></button> 
-          <button className="btn btn-primary"><Link to="/usertimeline">User_Timeline</Link></button> 
-          <button className="btn btn-primary"><Link to="/mentionstimeline">Mentions_Timeline</Link></button> 
-          <button className="btn btn-primary"><Link to="/friendsid">Friends_Id</Link></button> 
-          <button className="btn btn-primary"><Link to="/accountssettings">Accounts_Settings</Link></button> 
-          <button className="btn btn-primary"><Link to="/followerslist">Followers_Lists</Link></button> 
-          <button className="btn btn-primary"><Link to="/mute">Mute_Users_List</Link></button> 
+          <button className="FormField__Button"><Link to="/search" >Search Tweets with the word 'rainbow'</Link></button> <br />
+          <br />
+          <button className="FormField__Button"><Link to="/hometimeline">Home_Timeline</Link></button> <br />
+          <br />
+          <button className="FormField__Button"><Link to="/usertimeline">User_Timeline</Link></button> <br />
+          <br />
+          <button className="FormField__Button"><Link to="/mentionstimeline">Mentions_Timeline</Link></button><br />
+          <br /> 
+          <button className="FormField__Button"><Link to="/friendsid">Friends_Id</Link></button> <br />
+          <br />
+          <button className="FormField__Button"><Link to="/accountssettings">Accounts_Settings</Link></button> <br />
+          <br />
+          <button className="FormField__Button"><Link to="/friendslist">Friends_List</Link></button> <br />
+          <br />
+          <button className="FormField__Button"><Link to="/mute">Mute_Users_List</Link></button> <br />
+          <br />
           
     </div>
-            
-            
-            
-            
           
         );
     }

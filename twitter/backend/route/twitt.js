@@ -3,72 +3,80 @@ const cors = require("cors");
 var Twit = require("twit");
 
 var T = new Twit({
-  consumer_key: "",
-  consumer_secret: "",
-  access_token: "",
-  access_token_secret: ""
+  consumer_key: 		'SdHvNDEQd5kWb5vyPxDUK4ipb',
+  consumer_secret:      '2sBj6CLrpjhM4zZSZISsva3J0eIuMmOtuEi1AYDblesITEwRBL',
+  access_token:         '1174214007647080449-GeFbiTnZB3nF8Nh2E7evqPgUR0I3fP',
+  access_token_secret:  'UZXe9JfKFc509uTEyNo7vtelCZ6T69zlqLPTzu6enh6ip'
 });
-/*
-// 1 Search/tweets
-var params = { q: 'rainbow', count: 2 }
 
-function gotData(err, data, response) {
-  var tweets = data.statuses;
-  for (var i = 0; i < tweets.length; i++) {
-    console.log(tweets[i].text);
-  }
-};
-T.get('search/tweets', params, gotData);
+// 1 Search/tweets
+
+router.route("/search").get((req, res) => {
+
+T.get('search/tweets', { q: 'rainbow', count: 20 })
+  .then(results => res.json(results))
+  .catch(err => res.status(400).json("Error: " + err));
+});
 
 
 //2 home_timeline
-var params = { count: 10 }
 
-function gotData(err, data, response) {
-    console.log(data);
-};
-
-T.get('statuses/home_timeline', params, gotData);
+router.route("/hometimeline").get((req, res) => {
+  
+  T.get('statuses/home_timeline', { count: 10 } )
+  .then(results => res.json(results))
+  .catch(err => res.status(400).json("Error: " + err));
+});
 
 
 //3 user_timeline
-T.get('statuses/user_timeline', { screen_name: 'Crackillusion' },  function (err, data, response) {
-  console.log(data)
-})
+router.route("/usertimeline").get((req, res) => {
+  
+  T.get('statuses/user_timeline', { screen_name: 'Crackillusion' } )
+  .then(results => res.json(results))
+  .catch(err => res.status(400).json("Error: " + err));
+});
+
 
 //4 mentions_timeline
-T.get('statuses/mentions_timeline',  function (err, data, response) {
-  console.log(data)
-})
+//T.get('statuses/mentions_timeline',  function (err, data, response) {
+//  console.log(data)
+//})
 
 
 //5 friends/ids
-T.get('friends/ids', { screen_name: 'Crackillusion' },  function (err, data, response) {
-  console.log(data)
-})
+router.route("/friendsid").get((req, res) => {
+  
+  T.get('friends/ids', { screen_name: 'Crackillusion' } )
+  .then(results => res.json(results))
+  .catch(err => res.status(400).json("Error: " + err));
+});
 
-//6 followers/list
-T.get('friends/list', { screen_name: 'Crackillusion' },  function (err, data, response) {
-  console.log(data)
-})
+//6 friends/list
+router.route("/friendslist").get((req, res) => {
+  
+  T.get('friends/list', { screen_name: 'Crackillusion' } )
+  .then(results => res.json(results))
+  .catch(err => res.status(400).json("Error: " + err));
+});
 
 
-//7 account/settings
-T.get('account/settings', { screen_name: 'Crackillusion' },  function (err, data, response) {
-  console.log(data)
-})
-*/
+//7 account/settings 
+router.route("/accountssettings").get((req, res) => {
+  
+  T.get('account/settings', { screen_name: 'Crackillusion' } )
+  .then(results => res.json(results))
+  .catch(err => res.status(400).json("Error: " + err));
+});
+
+
 
 //8 mutes/users/list
-
 router.route("/mute").get((req, res) => {
   
-
   T.get("mutes/users/list")
     .then(results => res.json(results))
     .catch(err => res.status(400).json("Error: " + err));
-
-  
 });
 
 module.exports = router;
