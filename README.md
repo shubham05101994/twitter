@@ -1,5 +1,19 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+
+API USED:
+
+1.	search/tweets: Returns a collection of relevant tweets matching a specific query. https://developer.twitter.com/en/docs/tweets/search/api-reference/get-search-tweets
+2.	statuses/home_timeline: Returns a collection of the most recent Tweets and Retweets posted by the authenticating user and the users they follow. https://developer.twitter.com/en/docs/tweets/timelines/api-reference/get-statuses-home_timeline
+3.	statuses/user_timeline: Returns a collection of the most recent Tweets posted by the user indicated by the screen_name or user_id parameters. https://developer.twitter.com/en/docs/tweets/timelines/api-reference/get-statuses-user_timeline
+4.	saveds_earches/list: Returns the authenticated user's saved search queries.https://developer.twitter.com/en/docs/accounts-and-users/manage-account-settings/api-reference/get-saved_searches-list
+5.	friends/ids: Returns a cursored collection of user IDs for every user the specified user is following (otherwise known as their "friends") https://developer.twitter.com/en/docs/accounts-and-users/follow-search-get-users/api-reference/get-friends-ids
+6.	account/settings: Returns settings (including current trend, geo and sleep time information) for the authenticating user. https://developer.twitter.com/en/docs/accounts-and-users/manage-account-settings/api-reference/get-account-settings
+7.	friends/list: Returns a cursored collection of user objects for every user the specified user is following (otherwise known as their "friends"). https://developer.twitter.com/en/docs/accounts-and-users/follow-search-get-users/api-reference/get-friends-list
+8.	mutes/users/list: Returns an array of user objects the authenticating user has muted. https://developer.twitter.com/en/docs/accounts-and-users/mute-block-report-users/api-reference/get-mutes-users-list
+
+
+
 ## Available Scripts
 
 In the project directory, you can run:
