@@ -14,14 +14,15 @@ class FriendsList extends Component {
 
   componentDidMount() {
     Axios.get("http://localhost:5000/twitt/friendslist/").then(response => {
-      console.log(response);
-      console.log('hi');
+      //console.log(response);
+     // console.log('hi');
       if (response) {
     
         this.setState({
             response: response
           
         });
+
       }
     });
   }
@@ -29,57 +30,54 @@ class FriendsList extends Component {
 
     render() { 
 
-
-      console.log('Response data');
-        console.log(this.state.response.data);
         
         data0 = "";
-        if(this.state.response.data != undefined)
+        if(this.state.response.data !== undefined)
         {
           var data0 = this.state.response.data.data.users[0];
-          console.log(data0);
+          
         }
 
         data1 = "";
-        if(this.state.response.data != undefined)
+        if(this.state.response.data !== undefined)
         {
           var data1 = this.state.response.data.data.users[1];
-          console.log(data1);
+          //console.log(data1);
         }
 
         data2 = "";
         if(this.state.response.data != undefined)
         {
           var data2 = this.state.response.data.data.users[2];
-          console.log(data2);
+          //console.log(data2);
         }
 
         data3 = "";
         if(this.state.response.data != undefined)
         {
           var data3 = this.state.response.data.data.users[3];
-          console.log(data3);
+          //console.log(data3);
         }
 
         data4 = "";
         if(this.state.response.data != undefined)
         {
           var data4 = this.state.response.data.data.users[4];
-          console.log(data4);
+          //console.log(data4);
         }
 
         data5 = "";
         if(this.state.response.data != undefined)
         {
           var data5 = this.state.response.data.data.users[5];
-          console.log(data5);
+          //console.log(data5);
         }
 
         data6 = "";
         if(this.state.response.data != undefined)
         {
           var data6 = this.state.response.data.data.users[6];
-          console.log(data6);
+         // console.log(data6);
         }
         
         return ( 

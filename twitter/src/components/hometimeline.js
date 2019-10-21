@@ -5,7 +5,8 @@ class HomeTimeline extends Component {
     constructor() {
         super();
         this.state = {  
-            response: []
+            response: [],
+            data: []
 
         }
     }
@@ -22,29 +23,48 @@ class HomeTimeline extends Component {
             response: response
           
         });
+        console.log(this.state.response.data);
+
+        //data = "";
+        if(this.state.response.data != undefined)
+        {
+          var data1 = this.state.response.data.data;
+          this.setState({
+            data :data1
+          
+        });
+          
+         
+          console.log("hi  ",this.state.data);
+        }
+
       }
     });
   }
 
 
+
+
     render() { 
 
 
-      console.log('Response data');
-        console.log(this.state.response.data);
-
-        data = "";
-        if(this.state.response.data != undefined)
-        {
-          var data = this.state.response.data.data;
-          console.log(data);
-        }
+      //console.log('Response data');
+       
         
         return ( 
+<div>
+    {this.state.data.map((response) => (
+        
+        <p key={response.id}>
 
-            <div className= "twitter"> 
-                 <code>{JSON.stringify(data)}</code>
-            </div>
+            Hello from {response.created_at}!             retweet_count {response.retweet_count}
+            description {response.user.description}
+        
+        </p>
+    ))}
+    </div>
+
+
          );
     }
 }

@@ -5,7 +5,8 @@ class Mute extends Component {
     constructor() {
         super();
         this.state = {  
-            response: []
+            response: [],
+            data:""
 
         }
     }
@@ -14,35 +15,38 @@ class Mute extends Component {
 
   componentDidMount() {
     Axios.get("http://localhost:5000/twitt/mute/").then(response => {
-      console.log(response);
-      console.log('hi');
+     
       if (response) {
     
         this.setState({
             response: response
           
         });
+        
+        if(this.state.response.data != undefined)
+        {
+          
+           this.setState({
+            data: this.state.response.data.data.users[0]
+          
+        });
+        console.log("hi ",this.state.data);
+        }
+        
       }
     });
   }
 
-
+ 
     render() { 
-
-
-      console.log('Response data');
-        console.log(this.state.response.data);
-
-        data = "";
-        if(this.state.response.data != undefined)
-        {
-          var data = this.state.response.data.data.users[0];
-          console.log(data);
-        }
-        
         return ( 
+          <div>id:{this.state.data.id}<br></br>
+          <a>{this.state.data.created_at}</a>
 
-            <div className= "twitter"> 
+          
+          </div>
+          
+           /* <div className= "twitter"> 
                  id:<code>{JSON.stringify(data.id)}</code><br />
                     blocked_by:<code>{JSON.stringify(data.blocked_by)}</code> <br />
                     blocking:<code>{JSON.stringify(data.blocking)}</code> <br />
@@ -91,7 +95,7 @@ class Mute extends Component {
                     url:<code>{JSON.stringify(data.url)}</code> <br />
                     utc_offset:<code>{JSON.stringify(data.utc_offset)}</code> <br />
                     verified:<code>{JSON.stringify(data.verified)}</code> <br />
-            </div>
+            </div> */
          );
     }
 }
